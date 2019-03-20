@@ -1,1 +1,376 @@
 /* You can add global styles to this file, and also import other style files */
+
+// body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+/* everywhere else */
+* {
+  font-family: "Zapfino", Georgia, Serif;
+}
+
+/* Master Styles */
+// h1 {
+//   color: #369;
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-size: 250%;
+// }
+// h2, h3 {
+//   color: #444;
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-weight: lighter;
+// }
+
+h1 {color: #fff;}
+h2 {font-size: 1em; color: #fff; text-shadow: 16px 5px 20px #000000;}
+h3 {font-size: medium; color: #fff;}
+
+.pageTitle h2 {
+  font-size: larger;
+  margin-top: -2em;
+  color: hsl(0, 100%, 80%);
+  text-shadow: 16px 5px 20px #000000;
+}
+
+// h1 {width: auto; height: auto;}
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+// h2 {
+//   color: #e85d68;
+// }
+
+body {
+  margin: 2em;
+}
+body,
+input[text],
+button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+
+/** { box-sizing: border-box; }*/
+body {
+  // border: 1px solid rgba(255, 0, 0, .5);
+  transition: all 0.5s ease-in-out;
+  background: #484848;
+  @media screen and (min-width: 64em) {
+    background: #484848;
+  }
+  // height: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  // height: auto;
+
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* Navigation link styles */
+nav#mainNav {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5em;
+  text-align: right;
+  // height: 5%;
+  margin-top: 0.5em;
+  // padding: .2em;
+}
+
+nav#projNav {
+  height: 20vh;
+}
+
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  // margin-top: 10px;
+  display: inline-block;
+  text-shadow: -3px -2px 3px #000000;
+  text-decoration: none;
+  // font-size: large;
+  // font-family: fantasy;
+  color: hsl(0, 100%, 80%);
+  margin-bottom: -2em;
+  // background-color: #eee;
+  // border-radius: 4px;
+}
+
+nav a:visited,
+a:link {
+  color:  hsl(0, 100%, 80%);
+}
+nav a:hover {
+  color: #fff;
+  cursor: pointer;
+  // background-color: #CFD8DC;
+}
+nav a.active {
+  color: hsl(0, 100%, 80%);
+}
+
+h2:visited {
+  color: hsl(0, 100%, 70%);
+}
+
+h2:hover {
+  // color: #fff;
+  color: #e85d68;
+  // color: hsla(214, 60%, 60%, 1);
+  background-color: transparent;
+  cursor: pointer;
+  // background-color: #CFD8DC;
+}
+h2 a.active {
+  color: #e85d68;
+}
+
+
+
+// nav h1 {
+//   margin-bottom: 0;
+//   margin-top: 05%;
+// }
+
+// nav li {display: inline;}
+// ul li {list-stlye-type: none;}
+
+// .btns ul li {}
+// .btns li {text-decoration: none; color: #E85D68; text-shadow: -3px -2px 3px #000000; font-size: 100%; font-weight: bolder; margin-right: 3%;}
+// .btns li:hover {color: hsl(0, 100%, 80%); cursor: pointer;}
+// .btns {display: inline-block; padding: .5%; margin-top: 0%; margin-left: 70%; width: 30%}
+
+img[_ngcontent-c4] {
+  -webkit-filter: drop-shadow(12px 12px 12px rgba(0, 0, 0, 0.8));
+  cursor: default;
+  opacity: .60;
+}
+
+div.heroImg {
+  display: inline-flex;
+  float: right;
+  height: 80vh;
+  margin-top: -3em;
+}
+
+
+  // height: 610px
+  /*filter: url(#drop-shadow);*/
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";*/
+  // filter: blur(.2em);
+
+
+// -webkit-filter: drop-shadow(12px 12px 12px rgba(0,0,0,0.8)); cursor: default; opacity: .60; height: 610px;
+/*filter: url(#drop-shadow);*/
+/*-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";*/
+
+// div.greyLine {
+//   text-align: center;
+//   border-radius: 0.5em;
+//   background-color: rgba(255, 255, 255, 0.05);
+//   margin-top: -18%;
+//   margin-bottom: 15%;
+//   height: 5px;
+//   width: 55%;
+// }
+
+label[_ngcontent-c6] {
+  // display: block;
+  // width: 6em;
+  margin: 0.5em 0;
+  color: hsla(196, 43%, 45%, 1);
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+label[_ngcontent-c7] {
+  /* width: 36em; */
+  margin: .5em 0;
+  color: hsla(196, 43%, 45%, 1);
+  font-weight: bold;
+  font-family: fantasy;
+  /* color: rgba(255, 0, 0, .5); */
+  /* color: black; */
+
+}
+
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+
+small {
+  font-size: 80%;
+  margin-right: 1em;
+}
+
+/*us control over where colors start and stop on a gradient/hard stop between two colors*/
+/*background-image: linear-gradient(to right, #f7941d, #8d5022);*/
+
+/*opacity: 0.5; filter: alpha(opacity=100);*/
+
+// img {
+//   border-radius: 5em;
+//   -webkit-filter: blur(3px);
+//   -moz-filter: blur(5px);
+//   -o-filter: blur(3px);
+//   -ms-filter: blur(3px);
+//   filter: blur(3px);
+//   width: 50em;
+
+//   -ms-transform: rotate(7deg); /* IE 9 */
+//   -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+//   transform: rotate(0deg);
+// }
+
+// div.collage {margin: 0% 0% 0% -18%; padding: .5%; width: 65%; height: 95%;}
+// div.collage ul, h1.contactsInfoLinks {/*display: inline-block; right:0; left:0;*/}
+// div.collage ul {width: 85%; height: 95%;}
+// div.collage ul li {
+//   text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.66);
+//   list-style-type: none;
+//   /*border: 1px solid rgba(255, 0, 0, .5);*/
+//   opacity: 0.7;
+//   font-size: 4em;
+//   background: -webkit-linear-gradient(rgb(0, 5, 22), rgb(79, 16, 4));
+//   -webkit-background-clip: text;-webkit-text-fill-color: transparent;
+//   right: 0;
+// /*  width: 60%;
+//   height: 33%;*/
+// }
+// /*div.collage ul li:last-child {width: 65%;}*/
+
+// div.collage ul li:hover {background: -webkit-linear-gradient(rgb(79, 16, 4), rgb(0, 5, 22)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+// .aboutMeInfoLinks li:first-child {/*bottom: 40%; right: 48%; -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg); transform: rotate(-20deg);*/}
+// .aboutMeInfoLinks li:nth-child(2) {/*left: 25%; -webkit-transform: rotate(10deg); transform: rotate(10deg);*/bottom: 30%;}
+// .aboutMeInfoLinks li:last-child {/*-webkit-transform: rotate(0); transform: rotate(0); bottom: 15%; left: 15%;*/bottom: 0;}
+
+// .projectsInfoLinks li:first-child {/*bottom: 30%; right: 48%; -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg); transform: rotate(-20deg);*/}
+// .projectsInfoLinks li:nth-child(2) {/*left: 25%; -webkit-transform: rotate(10deg); transform: rotate(10deg);*/bottom: 35%;}
+// .projectsInfoLinks li:nth-child(3) {/*-webkit-transform: rotate(0); transform: rotate(0); bottom: 5%; left: 24%;*/bottom: 10%;}
+// .projectsInfoLinks li:last-child {top: 80%;}
+
+// h1.contactsInfoLinks {font-size: x-small; color: silver;}
+
+// div.infoTitle, div.displayImg, div.collage, div.collage ul li {position: absolute; overflow: visible;}
+// div.infoTitle {border-radius: 2px; /*box-shadow:  16px 20px 40px rgba(0,0,0,2);*/ margin: -6% 0 0 4%; width: 12%; height: 7%; padding: .5%;}
+
+// div.slideShow {
+//   /*border: 1px solid;*/
+//   width: 1500px;
+//   height: 575px;
+//   /*margin-top: 3%;*/
+//   padding: 2%;
+// }
+
+// div.slideShow img {height: 75%;}
+
+button {
+  // font-family: Arial;
+  // background-color: #eee;
+  border: none;
+  // padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  // background-color: #cfd8dc;
+  // color: #607D8B;
+}
+
+button:disabled {
+  // background-color: #eee;
+  // color: #ccc;
+  cursor: auto;
+}
+
+// button {
+//   font-family: Arial;
+//   background-color: #eee;
+//   border: none;
+//   padding: 5px 10px;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   cursor: hand;
+// }
+// button:hover {
+//   background-color: #cfd8dc;
+// }
+// button:disabled {
+//   background-color: #eee;
+//   color: #aaa;
+//   cursor: auto;
+// }
+
+footer {
+  position: fixed;
+  // margin-top: 100%;
+  cursor: pointer;
+  top: 95%;
+}
+
+// footer {height: 10%; margin-top: -5%;}
+footer small {
+  color: hsl(0, 100%, 80%);
+  // color: #e85d68;
+  // color: #fff;
+  text-shadow: -3px -2px 3px #000000;
+  text-align: center;
+  font-size: 10px;
+}
+
+footer small:hover {
+  color: #fff;
+}
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
