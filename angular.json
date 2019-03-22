@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/boutbitnz",
+            "outputPath": "dist/boutbitnz/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -103,6 +103,28 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/boutbitnz/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "boutbitnz:build",
+            "serverTarget": "boutbitnz:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "boutbitnz:build:production",
+              "serverTarget": "boutbitnz:server:production"
+            }
           }
         }
       }

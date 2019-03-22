@@ -16,6 +16,10 @@ speed-measure-plugin.json
 
 # local config
 /src/config.json
+local.js
+.gitignore
+.gitignore/
+.gitignore/*
 
 # e2e
 # /e2e/*.js
@@ -33,11 +37,13 @@ e2e/
 
 # IDE - VSCode
 .vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
 
 # misc
 /.sass-cache
