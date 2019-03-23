@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppShellComponent } from './components/app-shell/app-shell.component';
+// import { AppShellComponent } from './components/app-shell/app-shell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppShellComponent
+    // AppShellComponent
   ],
   imports: [
     BrowserModule,

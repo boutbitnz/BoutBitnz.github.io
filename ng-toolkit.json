@@ -1,8 +1,8 @@
-// {
-//   "universal": {
-//     "project": "boutbitnz",
-//     "skipInstall": false,
-//     "directory": ".",
-//     "http": true
-//   }
-// }
+{
+  "universal": {
+    "project": "boutbitnz",
+    "skipInstall": false,
+    "directory": ".",
+    "http": true
+  }
+}
