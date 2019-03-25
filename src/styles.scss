@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Angular 6 & 7 HTTP Client Interceptor with Error handling.
+// https://scotch.io/@vigneshsithirai/angular-6-7-http-client-interceptor-with-error-handling#toc-creating-separate-service-for-handling-errors-
+// Step 4: Include a theme
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+
 // body { margin: 0; font-family: 'Roboto', sans-serif; }
 
 /* everywhere else */
@@ -367,6 +374,25 @@ footer small {
 
 footer small:hover {
   color: #fff;
+}
+
+.loader {
+  left: 50%;
+  top: 50%;
+  position: relative;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+}
+
+.loader #spinner {
+    box-sizing: border-box;
+    stroke: #673AB7;
+    stroke-width: 3px;
+    -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+            animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
 }
 
 /*
