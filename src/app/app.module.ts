@@ -5,7 +5,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AppShellComponent } from './components/app-shell/app-shell.component';
+// import { AppShellComponent } from './core/tools/app-shell.component';
 
 @NgModule({
   declarations: [
