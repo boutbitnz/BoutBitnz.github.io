@@ -1,11 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
+import { HttpConfigInterceptor } from './httpconfig.interceptor';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'app-root',
+  selector: 'error',
   // app-root
-  templateUrl: `
+  template: `
   <div>
     <div>
         <p>
@@ -15,7 +16,8 @@ import { MAT_DIALOG_DATA } from '@angular/material';
             Status: {{data.status}}
         </p>
     </div>
-  </div>`,
+  </div>
+  `,
 
 })
 export class ErrorDialogComponent implements OnInit {
