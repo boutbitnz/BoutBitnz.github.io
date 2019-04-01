@@ -395,6 +395,22 @@ footer small:hover {
             animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
 }
 
+img[_ngcontent-c4] {
+  // -webkit-filter: drop-shadow(12px 12px 12px rgba(0, 0, 0, 0.8));
+  // cursor: default;
+  // opacity: .60;
+}
+
+img.heroImg {
+  -webkit-filter: drop-shadow(12px 12px 12px rgba(0, 0, 0, 0.8));
+  cursor: default;
+  opacity: .60;
+  // display: inline-flex;
+  // float: right;
+  // height: 80vh;
+  // margin-top: -3em;
+}
+
 /*
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
