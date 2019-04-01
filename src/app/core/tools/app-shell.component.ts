@@ -17,7 +17,9 @@ import { Component, OnInit } from '@angular/core';
     i4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3
     IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   </div>
+  <router-outlet></router-outlet>
 `,
+
   // styleUrls: ['./app-shell.component.scss'],
 //   [
 //     `
