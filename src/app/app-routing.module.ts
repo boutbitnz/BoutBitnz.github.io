@@ -1,8 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { title } from 'process';
+import { AboutComponent } from './components/about/about.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { HomePgComponent } from './components/home-pg/home-pg.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  // {path: '', component: },
+  {path: 'about', component: AboutComponent},
+  {path: 'contacts', component: ContactInfoComponent},
+  {path: 'home', component: HomePgComponent},
+  {path: 'projects', component: ProjectsComponent},
+  // {path: 'about', component: AboutComponent},
+  // {path: 'about', component: AboutComponent},
+  // directs all other routes to the main page
+  {path: '**', redirectTo: 'HomePgComponent'}
+
+];
 
 // const desktop_routes: Routes = [
 //   {

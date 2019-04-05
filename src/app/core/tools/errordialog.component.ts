@@ -1,12 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { HttpConfigInterceptor } from './httpconfig.interceptor';
+// import { HttpConfigInterceptor } from './httpconfig.interceptor';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'error',
   // app-root
-  template: `
+  template:
+  `
   <div>
     <div>
         <p>
