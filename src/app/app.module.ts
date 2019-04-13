@@ -6,41 +6,41 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { MatDialogModule } from '@angular/material';
-import { NgModule, Inject, PLATFORM_ID, APP_ID } from '@angular/core';
+import { NgModule, Inject, PLATFORM_ID, APP_ID, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MaterialModule } from './material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { CoreModule } from './core/core.module';
-// import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
 
-// import { AppShellComponent } from './core/tools/app-shell.component';
-// import { ErrorDialogComponent } from './core/tools/errordialog.component';
-import { ErrorDialogService } from './core/Services/errordialog.service';
-// import { ErrorDialogComponent } from './core/tools/errordialog.component';
-import { HttpConfigInterceptor } from './core/tools/httpconfig.interceptor';
-import { LoginService } from './core/Services/login.service';
+import { ErrorDialogComponent } from './components/error-dialog/errordialog.component';
+import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
 import {Routes, RouterModule} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './components/about/about.component';
-import { HomePgComponent } from './components/home-pg/home-pg.component';
-import { ContactInfoComponent } from './components/contact-info/contact-info.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { ProjectsComponent } from './components/projects/projects.component';
+// import { AboutComponent } from './components/about/about.component';
+// import { HomePgComponent } from './components/home-pg/home-pg.component';
+// import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+// import { FooterComponent } from './shared/footer/footer.component';
+// import { ProjectsComponent } from './components/projects/projects.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    // AppShellComponent,
-    ContactInfoComponent,
-    HeaderComponent,
-    HomePgComponent,
-    ProjectsComponent,
-    // ErrorDialogComponent,
-
+    // AboutComponent,
+    // ContactInfoComponent,
+    // FooterComponent,
+    // HeaderComponent,
+    // HomePgComponent,
+    // ProjectsComponent,
+    ErrorDialogComponent,
   ],
   imports: [
+    // Add .withServerTransition() to support Universal rendering.
+    // The application ID can be any identifier which is unique on
+    // the page.
     BrowserModule.withServerTransition({ appId: 'Boutbitnz Inc' }),
     // BrowserModule,
     BrowserAnimationsModule,
@@ -48,16 +48,29 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatDialogModule,
-    // SharedModule
+    MaterialModule,
+    HeaderModule
   ],
-  providers: [
-    LoginService,
-    ErrorDialogService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+
+  // providers: [
+  //   {
+  //     provide: APP_INITIALIZER,
+  //     useFactory: configInitializationFactory,
+  //     deps: [ConfigService, Injector],
+  //     multi: true
+  //   }],
+  // ],
+
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
-  entryComponents: [HomePgComponent],
+
+  entryComponents: [ErrorDialogComponent],
+  // Add ErrorDialogComponent add services
 
   bootstrap: [AppComponent]
 })

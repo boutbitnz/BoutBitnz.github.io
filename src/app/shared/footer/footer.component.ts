@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'footer',
-  // templateUrl: './footer.component.html',
-  template: `<footer class="footer"><small>© Copyright 2015, Boutbitnz Coorporation</small></footer>`,
-  // styleUrls: ['./footer.component.scss']
-  styles: [
-  `
+const footerTemplate = `<footer class="footer"><small>© Copyright 2015, Boutbitnz Coorporation</small></footer>`;
+
+const footerStyles = `
     footer {
       position: fixed;
       cursor: pointer;
@@ -24,7 +19,15 @@ import { Component, OnInit } from '@angular/core';
     footer small:hover {
       color: #fff;
     }
-`
+`;
+@Component({
+  // tslint:disable-next-line:component-selector
+  selector: 'footer',
+  // templateUrl: './footer.component.html',
+  template: footerTemplate,
+  // styleUrls: ['./footer.component.scss']
+  styles: [
+  footerStyles
   ]
 })
 export class FooterComponent implements OnInit {

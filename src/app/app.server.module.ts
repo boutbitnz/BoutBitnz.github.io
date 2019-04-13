@@ -5,22 +5,25 @@ import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader'
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AppShellComponent } from './core/tools/app-shell.component';
 
-const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
+// const routes: Routes = [ { path: 'shell', component:  }];
 
 @NgModule({
   imports: [
+    // The AppServerModule should import your AppModule followed
+    // by the ServerModule from @angular/platform-server.
     AppModule,
-    ServerModule,
     ModuleMapLoaderModule,
-    RouterModule.forRoot(routes)
+    // RouterModule.forRoot(routes), // <-- *Important* to have lazy-loaded routes work
+    ServerModule
   ],
   providers: [
     // Add universal-only providers here
   ],
+  // Since the bootstrapped component is not inherited from your
+  // imported AppModule, it needs to be repeated here.
   bootstrap: [ AppComponent ],
-  declarations: [AppShellComponent],
+  declarations: [],
 })
 
 export class AppServerModule {}

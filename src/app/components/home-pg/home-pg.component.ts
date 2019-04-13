@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'home',
-  // templateUrl: './boutbitnz-home.component.html',
-  template:
-  `
+const homeTemplate = `
   <div class="row">
     <div class="pageTitle">
       <h1>ELIZABETH BELL</h1>
@@ -16,10 +11,8 @@ import { Component, OnInit } from '@angular/core';
       <img src='../../../assets/imgs/botBody.png' alt= "Image of 3 figures"
       style='float:right; margin: 4em -6em 0em 0em;'/>
   </div>
-`,
-
-  styles: [
-    `
+`;
+const homeStyles = `
       div.heroImg {
         display: inline-flex;
         float: right;
@@ -33,7 +26,16 @@ import { Component, OnInit } from '@angular/core';
         opacity: .60;
       }
 
-    `
+    `;
+@Component({
+  // tslint:disable-next-line:component-selector
+  selector: 'home',
+  // templateUrl: './boutbitnz-home.component.html',
+  template:
+  homeTemplate,
+
+  styles: [
+    homeStyles
   ]
 
 })

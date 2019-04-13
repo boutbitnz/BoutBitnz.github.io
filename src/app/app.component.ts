@@ -1,100 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, Router, RouterModule, Event, NavigationStart, NavigationEnd, NavigationError  } from '@angular/router';
-// import { LoginService } from './core/Services/login.service';
+import { LoginService } from './Services/login.service';
 
 const wrapper =
 `
-<div class="wrapper" style="height: 100vh;">
-  <div class="container-fluid">
-    <div class="row">
+  <div class="wrapper" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row">
 
-    <header></header>
-    <home></home>
-    <footer class="footer"><small>© Copyright 2015, Boutbitnz Coorporation</small></footer>
+      <header></header>
+      <footer class="footer"><small>© Copyright 2015, Boutbitnz Coorporation</small></footer>
 
+      </div>
     </div>
+    <router-outlet></router-outlet>
   </div>
-  <router-outlet></router-outlet>
-</div>
   `;
 
-export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'projects';
-
 @Component({
+
   // tslint:disable-next-line:component-selector
   selector: 'boutbitnz',
   // templateUrl: './app.component.html',
   // templateUrl: './app.component.html',
   template:
   wrapper,
-
   // styleUrls: ['./app.component.scss']
-  // providers: [angular.module('myApp', ['angular-loading-bar'])]
+
 })
 export class AppComponent implements OnInit {
+
   title = 'Boutbitnz Inc';
 
-  editor: EditorType = 'name';
-
-  get showAbout() {
-    return this.editor === 'about';
-  }
-
-  get showContacts() {
-    return this.editor === 'contacts';
-  }
-
-  get showHeader() {
-    return this.editor === 'header';
-  }
-
-  get showHome() {
-    return this.editor === 'home';
-  }
-
-  get showProjects() {
-    return this.editor === 'projects';
-  }
-
-  // get showNameEditor() {
-  //   return this.editor === 'name';
-  // }
-
-  // get showProfileEditor() {
-  //   return this.editor === 'profile';
-  // }
-
-  toggleEditor(type: EditorType) {
-    this.editor = type;
-  }
-
   // Angular-Interceptor | https://github.com/vigneshsithirai/Angular-Interceptor/blob/master/src/app/app.component.ts
-  // constructor(public loginService: LoginService) {
-  //   this.loginService.login({}).subscribe(data => {
-  //     console.log(data);
-  //   });
-  // }
-
-  // getCustomerDetails() {
-  //   this.loginService.getCustomerDetails().subscribe((data) => {
-  //     console.log('----->>>', data);
-  //   });
-  // }
-
-  constructor(private router: Router, ) {
-    this.router.events.subscribe((event: Event) => {
-        if (event instanceof NavigationStart) {
-            console.log('Navigation start');
-        }
-        if (event instanceof NavigationEnd) {
-            console.log('Navigation end');
-        }
-        if (event instanceof NavigationError) {
-
-            console.log(event.error);
-        }
+  constructor(public loginService: LoginService) {
+    this.loginService.login({}).subscribe(data => {
+      console.log(data);
     });
   }
+
+  getCustomerDetails() {
+    this.loginService.getCustomerDetails().subscribe((data) => {
+      console.log('----->>>', data);
+    });
+  }
+
+  // constructor(private router: Router, ) {
+  //   this.router.events.subscribe((event: Event) => {
+  //       if (event instanceof NavigationStart) {
+  //           console.log('Navigation start');
+  //       }
+  //       if (event instanceof NavigationEnd) {
+  //           console.log('Navigation end');
+  //       }
+  //       if (event instanceof NavigationError) {
+
+  //           console.log(event.error);
+  //       }
+  //   });
+  // }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -102,10 +65,7 @@ export class AppComponent implements OnInit {
 
 }
 
-
-
-
-
+// Loading Spinner | https://auth0.com/blog/introduction-to-progressive-apps-part-one/
 // <div class="one-half column" style="margin-top: 15%">
 // <i class="fa fa-spinner fa-spin fa-3x"></i>
 // <br>Loading ...

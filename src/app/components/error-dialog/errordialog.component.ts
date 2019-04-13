@@ -1,13 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-// import { HttpConfigInterceptor } from './httpconfig.interceptor';
 
-@Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'error',
-  // app-root
-  template:
-  `
+const errorDialog = `
   <div>
     <div>
         <p>
@@ -18,7 +12,14 @@ import { MAT_DIALOG_DATA } from '@angular/material';
         </p>
     </div>
   </div>
-  `,
+  `;
+// import { HttpConfigInterceptor } from './httpconfig.interceptor';
+
+@Component({
+  // tslint:disable-next-line:component-selector
+  selector: 'boutbitnz',
+  template:
+  errorDialog,
 
 })
 export class ErrorDialogComponent implements OnInit {

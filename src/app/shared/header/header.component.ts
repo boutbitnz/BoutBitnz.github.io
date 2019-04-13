@@ -1,5 +1,13 @@
 
 import { Component, OnInit } from '@angular/core';
+// import { AboutComponent } from './../../components/about/about.component';
+// import { HomePgComponent } from './../../components/home-pg/home-pg.component';
+// import { ContactInfoComponent } from './../../components/contact-info/contact-info.component';
+// import { FooterComponent } from './../../shared/footer/footer.component';
+// import { ProjectsComponent } from './../../components/projects/projects.component';
+// import { AppRoutingModule } from './../../app-routing.module';
+
+export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'projects';
 
 const mainNav = `
     <nav id="mainNav">
@@ -12,7 +20,7 @@ const mainNav = `
     <about *ngIf="showAbout"></about>
     <contacts *ngIf="showContacts"></contacts>
     <header *ngIf="showHeader"></header>
-    <home *ngIf="showHomePg"></home>
+    <home *ngIf="showHome"></home>
     <projects *ngIf="showProjects"></projects>
     `;
 @Component({
@@ -28,17 +36,42 @@ const mainNav = `
 export class HeaderComponent implements OnInit {
 
   title = 'Header';
-  constructor() { }
+
+  editor: EditorType = 'home';
+
+  get showAbout() {
+    return this.editor === 'about';
+  }
+
+  get showContacts() {
+    return this.editor === 'contacts';
+  }
+
+  get showHeader() {
+    return this.editor === 'header';
+  }
+
+  get showHome() {
+    return this.editor === 'home';
+  }
+
+  get showProjects() {
+    return this.editor === 'projects';
+  }
+
+  // get showNameEditor() {
+  //   return this.editor === 'name';
+  // }
+
+  // get showProfileEditor() {
+  //   return this.editor === 'profile';
+  // }
+
+  toggleEditor(type: EditorType) {
+    this.editor = type;
+  }
+  // constructor() { }
 
   ngOnInit() {
   }
-
 }
-
-// <a (click)="toggleEditor('header')">Header</a>
-
-// <a (click)="toggleEditor('name')">Name Editor</a>
-// <a (click)="toggleEditor('profile')">Profile Editor</a>
-
-// <name-editor *ngIf="showNameEditor"></name-editor>
-// <profile-editor *ngIf="showProfileEditor"></profile-editor>
