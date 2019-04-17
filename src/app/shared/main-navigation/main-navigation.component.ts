@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 // import { AboutComponent } from './../../components/about/about.component';
 // import { HomePgComponent } from './../../components/home-pg/home-pg.component';
@@ -7,48 +6,95 @@ import { Component, OnInit } from '@angular/core';
 // import { ProjectsComponent } from './../../components/projects/projects.component';
 // import { AppRoutingModule } from './../../app-routing.module';
 
-// export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'projects';
+export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'mnav' | 'pnav' | 'projects';
 
-const headerTemplate = `
-    <div class="row">
-    <div class="pageTitle">
-      <h1>ELIZABETH BELL</h1>
-      <h2>BoutBitnz</h2>
-    </div>
+const mainNavTemplate = `
+    <nav id="mainNav">
+      <a href="#" class="navText" (click)="toggleEditor('home')">Home</a>
+      <a href="#" class="navText" (click)="toggleEditor('about')">About</a>
+      <a href="#" class="navText" (click)="toggleEditor('contacts')">Contacts</a>
+      <a href="#" class="navText" (click)="toggleEditor('pnav')">Projects</a>
+    </nav>
+
+    <about *ngIf="showAbout"></about>
+    <contacts *ngIf="showContacts"></contacts>
+    <home *ngIf="showHome"></home>
+    <pnav *ngIf="showPNav"></pnav>
     `;
 
-const headerStyles = `
+const mainNavStyles = `
     header {
-      position: fixed;
       width: 100%;
       height: 56px;
       top: 0;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+      display: -ms-flexbox;
       z-index: 1;
-      color: #fff;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
       user-select: none;
       transition: background-color 250ms linear;
     }
     `;
+
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'header',
-  // templateUrl: './header.component.html'
-  template: headerTemplate,
-
-
-  styles: [ headerStyles ],
+  selector: 'mnav',
+  // templateUrl: './main-navigation.component.html'
+  template: mainNavTemplate,
+  styles: [ mainNavStyles ],
 
 })
-export class HeaderComponent implements OnInit {
+export class MainNavigationComponent implements OnInit {
 
-  title = 'Header';
+  title = 'Main Navigation';
 
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+  editor: EditorType = 'home';
+
+  get showAbout() {
+    return this.editor === 'about';
   }
 
+  get showContacts() {
+    return this.editor === 'contacts';
+  }
+
+  // get showHeader() {
+  //   return this.editor === 'header';
+  // }
+
+  get showHome() {
+    return this.editor === 'home';
+  }
+  get showMNav() {
+    return this.editor === 'mnav';
+  }
+  get showPNav() {
+    return this.editor === 'pnav';
+  }
+
+  // get showProjects() {
+  //   return this.editor === 'projects';
+  // }
+
+  // get showNameEditor() {
+  //   return this.editor === 'name';
+  // }
+
+  // get showProfileEditor() {
+  //   return this.editor === 'profile';
+  // }
+
+  toggleEditor(type: EditorType) {
+    this.editor = type;
+  }
+  // constructor() { }
+
+  ngOnInit() {
+  }
 }
+
 
 // <nav id="mainNav">
 //   <a (click)="toggleEditor('header')">Header</a>

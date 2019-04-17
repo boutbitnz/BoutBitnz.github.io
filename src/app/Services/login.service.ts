@@ -1,3 +1,5 @@
+// LogIn API Customer detail API
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import 'rxjs/operator/map';
@@ -7,13 +9,14 @@ export class LoginService {
 
     constructor(private http: HttpClient) { }
 
+    // Added the function to call two API's
     login(data: { email?: string; password?: string; }) {
-        data = { email: 'boutbitnz2@gmail.com', password: 'Test@123' };
-        return this.http.post('https://localhost:4200/api/login', data);
+        data = { email: 'boutbitnz2@gmail.com', password: 'em1evol' };
+        return this.http.post('http://localhost:4200/api/login', data);
     }
 
     getCustomerDetails() {
-        return this.http.get('https://localhost:4200/customers/details');
+        return this.http.get('http://localhost:4200/customers/details');
     }
 
 }

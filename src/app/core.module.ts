@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+
 
 // import { ErrorDialogComponent } from './components/error-dialog/errordialog.component';
 // Services
-import { ErrorDialogService } from './Services/errordialog.service';
-import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
-import { LoginService } from './Services/login.service';
+// import { ErrorDialogService } from './Services/errordialog.service';
+// import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
+// import { LoginService } from './Services/login.service';
 
 // import { RouterModule } from '@angular/router';
 
@@ -15,15 +14,17 @@ import { LoginService } from './Services/login.service';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
+    // HttpClientModule,
     // RouterModule // import routing
   ],
 
-  providers: [
-    LoginService,
-    ErrorDialogService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
-  ],
+  // This is about how to handle the http request and responce using Angular 6&7 interceptor
+  // And how to handle the error using material dialog
+  // providers: [
+  //   LoginService,
+  //   ErrorDialogService,
+  //   { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+  // ],
 
 })
 export class CoreModule { }

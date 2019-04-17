@@ -7,8 +7,8 @@ const wrapper =
     <div class="container-fluid">
       <div class="row">
 
-      <header></header>
-      <footer class="footer"><small>© Copyright 2015, Boutbitnz Coorporation</small></footer>
+      <mnav></mnav>
+      <footer></footer>
 
       </div>
     </div>
@@ -60,38 +60,10 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.');
   }
 
 }
-
-// Loading Spinner | https://auth0.com/blog/introduction-to-progressive-apps-part-one/
-// <div class="one-half column" style="margin-top: 15%">
-// <i class="fa fa-spinner fa-spin fa-3x"></i>
-// <br>Loading ...
-// </div>
-
-// <nav id="mainNav">
-//   <a (click)="toggleEditor('header')">Header</a>
-//   <a href="#" class="navText" (click)="toggleEditor('home')">Home</a>
-//   <a href="#" class="navText" (click)="toggleEditor('about')">About</a>
-//   <a href="#" class="navText" (click)="toggleEditor('contacts')">Contacts</a>
-//   <a href="#" class="navText" (click)="toggleEditor('projects')">Projects</a>
-//   <a (click)="toggleEditor('name')">Name Editor</a>
-//   <a (click)="toggleEditor('profile')">Profile Editor</a>
-// </nav>
-
-// <section>
-//   <projects></projects>
-//   <about *ngIf="showAbout"></about>
-//   <contacts *ngIf="showContacts"></contacts>
-//   <header *ngIf="showHeader"></header>
-//   <home *ngIf="showHome"></home>
-//   <name-editor *ngIf="showNameEditor"></name-editor>
-//   <profile-editor *ngIf="showProfileEditor"></profile-editor>
-//   <projects *ngIf="showProjects"></projects>
-// </section>
-
 
 // angular-multi-view
 // <div class="container-fluid">

@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { HomePgComponent } from './components/home-pg/home-pg.component';
-import { ProjectsComponent } from './components/projects/projects.component';
+// import { ProjectsComponent } from './components/projects/projects.component';
 import { HeaderComponent } from './shared/header/header.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contacts', component: ContactInfoComponent},
   {path: 'home', component: HomePgComponent},
-  {path: 'projects', component: ProjectsComponent},
+  // {path: 'projects', component: ProjectsComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: AboutComponent},
   // directs all other routes to the main page

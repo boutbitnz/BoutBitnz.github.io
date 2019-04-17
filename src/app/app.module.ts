@@ -5,26 +5,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
+import { map, catchError } from 'rxjs/operators';
 import { MatDialogModule } from '@angular/material';
 import { NgModule, Inject, PLATFORM_ID, APP_ID, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CoreModule } from './core.module';
-
-import { ErrorDialogComponent } from './components/error-dialog/errordialog.component';
+// import { CoreModule } from './core.module';
+// Services
+import { ErrorDialogService } from './Services/errordialog.service';
 import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
+import { LoginService } from './Services/login.service';
 import {Routes, RouterModule} from '@angular/router';
 
-
+// Components
 import { AppComponent } from './app.component';
 // import { AboutComponent } from './components/about/about.component';
 // import { HomePgComponent } from './components/home-pg/home-pg.component';
 // import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { ErrorDialogComponent } from './components/error-dialog/errordialog.component';
 // import { FooterComponent } from './shared/footer/footer.component';
+import { MainNavigationModule } from './shared/main-navigation/main-navigation.module';
+import { ProjectsNavigationModule } from './shared/projects-navigation/projects-navigation.module';
 // import { ProjectsComponent } from './components/projects/projects.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
@@ -44,25 +48,25 @@ import { HeaderModule } from './shared/header/header.module';
     BrowserModule.withServerTransition({ appId: 'Boutbitnz Inc' }),
     // BrowserModule,
     BrowserAnimationsModule,
-    CoreModule,
+    // CoreModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MainNavigationModule,
     MatDialogModule,
+    ProjectsNavigationModule,
     MaterialModule,
-    HeaderModule
   ],
 
-  // providers: [
-  //   {
-  //     provide: APP_INITIALIZER,
-  //     useFactory: configInitializationFactory,
-  //     deps: [ConfigService, Injector],
-  //     multi: true
-  //   }],
-  // ],
+  // This is about how to handle the http request and responce using Angular 6&7 interceptor
+  // And how to handle the error using material dialog
+  providers: [
+    LoginService,
+    ErrorDialogService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+  ],
 
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

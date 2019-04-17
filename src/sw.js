@@ -1,24 +1,14 @@
-// Like I explained in the earlier part of this post, all our assets are in filesToCache array.
-// As the service worker gets installed, it opens the cache in the browser and adds all the files
-// we defined in the array to the pwa-commits-v3 cache. The install event fires once the service worker is
-// already installed. This phase ensures that your service worker updates its cache whenever any of
-// the app shell files change. The fetch event phase serves the app shell from the cache.
-
-// Note: Check out Google's sw-toolbox and sw-precachelibraries for easier and
-// better way of precaching your assets and generating service workers.
-
-
 var cacheName = 'pwa-commits-v3';
 
 var filesToCache = [
     './',
     './css/style.css',
-    './images/books.png',
-    './images/Home.svg',
-    './images/ic_refresh_white_24px.svg',
-    './images/profile.png',
-    './images/push-off.png',
-    './images/push-on.png',
+    // './images/books.png',
+    // './images/Home.svg',
+    // './images/ic_refresh_white_24px.svg',
+    // './images/profile.png',
+    // './images/push-off.png',
+    // './images/push-on.png',
     './js/app.js',
     './js/menu.js',
     './js/offline.js',
@@ -50,7 +40,7 @@ self.addEventListener('activate', function(event) {
 
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
-            Promise.all(cacheNames.map(function(key) {
+            return Promise.all(cacheNames.map(function(key) {
                 if( key !== cacheName) {
                     console.log('Service Worker: Removing Old Cache', key);
                     return caches.delete(key);
