@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 
 import { ProjectsNavigationComponent } from './projects-navigation.component';
+import { ReactiveFormComponent } from 'src/app/components/reactive-form/reactive-form.component';
 
 
 // import { NameEditorComponent } from '';
@@ -16,7 +17,7 @@ import { ProjectsNavigationComponent } from './projects-navigation.component';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  declarations: [ProjectsNavigationComponent],
+  declarations: [ProjectsNavigationComponent, ReactiveFormComponent],
   exports: [ProjectsNavigationComponent]
 })
 export class ProjectsNavigationModule { }

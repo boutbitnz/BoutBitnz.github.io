@@ -4,12 +4,12 @@ import { Component, OnInit } from '@angular/core';
 
 const projectsNavTemplate = `
     <nav id="projNav">
-      <a href="#" (click)="toggleEditor('profile')"><small><h2>Profile Editor</h2></small></a>
+      <a href="#" (click)="toggleEditor('rform')"><small><h2>Reactive Forms</h2></small></a>
       <a href="#" (click)="toggleEditor('name')"><small><h2>Name Editor</h2></small></a>
     </nav>
 
     <div layout="column" layout-align-xs="space-between none">
-
+      <rform *ngIf="showrForm"></rform>
     </div>
 
     `;
@@ -19,7 +19,7 @@ const projectsNavStyles = ` h3 {font-family: fantasy;} `;
 
 // animations: [ fade ]
 
-export type EditorType = 'name' | 'profile';
+export type EditorType = 'name' | 'profile' | 'rform';
 
 
 @Component({
@@ -32,12 +32,16 @@ export type EditorType = 'name' | 'profile';
 export class ProjectsNavigationComponent implements OnInit {
 
 
-  get showProfileEditor() {
-    return this.editor === 'profile';
+  get showrForm() {
+    return this.editor === 'rform';
   }
 
   get showNameEditor() {
     return this.editor === 'name';
+  }
+
+  get showProfileEditor() {
+    return this.editor === 'profile';
   }
 
   constructor() { }

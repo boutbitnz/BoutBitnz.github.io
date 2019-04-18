@@ -2,17 +2,17 @@ import '../polyfills';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { map, catchError } from 'rxjs/operators';
 import { MatDialogModule } from '@angular/material';
 import { NgModule, Inject, PLATFORM_ID, APP_ID, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MaterialModule } from './material.module';
-import { ReactiveFormsModule } from '@angular/forms';
 
 // import { CoreModule } from './core.module';
 // Services
+import { AppRoutingModule } from './app-routing.module';
 import { ErrorDialogService } from './Services/errordialog.service';
 import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
 import { LoginService } from './Services/login.service';
@@ -27,8 +27,8 @@ import { ErrorDialogComponent } from './components/error-dialog/errordialog.comp
 // import { FooterComponent } from './shared/footer/footer.component';
 import { MainNavigationModule } from './shared/main-navigation/main-navigation.module';
 import { ProjectsNavigationModule } from './shared/projects-navigation/projects-navigation.module';
-// import { ProjectsComponent } from './components/projects/projects.component';
-import { AppRoutingModule } from './app-routing.module';
+import { ProjectsModule } from './components/projects/projects.module';
+
 
 @NgModule({
   declarations: [
@@ -51,13 +51,14 @@ import { AppRoutingModule } from './app-routing.module';
     // CoreModule,
     FormsModule,
     HttpClientModule,
-    RouterModule,
+    MaterialModule,
     ReactiveFormsModule,
+    RouterModule,
     AppRoutingModule,
     MainNavigationModule,
     MatDialogModule,
     ProjectsNavigationModule,
-    MaterialModule,
+    ProjectsModule
   ],
 
   // This is about how to handle the http request and responce using Angular 6&7 interceptor

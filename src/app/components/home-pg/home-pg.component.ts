@@ -9,9 +9,10 @@ const heroTemplate = `
 `;
 const heroStyles = `
     .heroImg {
-      border: 1px solid;
-      float: right;
+      float: left;
       height: 80vh;
+      padding: .5em;
+      margin-left: -5em;
     }
     .heroImg img {
       -webkit-filter: drop-shadow(12px 12px 12px rgba(0, 0, 0, 0.8));
