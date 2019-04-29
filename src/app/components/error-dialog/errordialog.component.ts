@@ -2,6 +2,8 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
+// import { HttpConfigInterceptor } from './../../Services/httpconfig.interceptor';
+
 
 const errorDialog =
 `
@@ -16,7 +18,6 @@ const errorDialog =
     </div>
   </div>
   `;
-// import { HttpConfigInterceptor } from './httpconfig.interceptor';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -28,7 +29,7 @@ export class ErrorDialogComponent implements OnInit {
 
   title = 'Angular-Interceptor';
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: string) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {
   }
