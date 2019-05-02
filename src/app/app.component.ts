@@ -8,6 +8,7 @@ const wrapper =
       <div class="row">
 
       <mnav></mnav>
+      <h2><small style="float: left;" (click)="getCustomerDetails()">Get customer details</small></h2>
       <footer></footer>
 
       </div>

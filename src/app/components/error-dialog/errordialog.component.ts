@@ -29,7 +29,9 @@ export class ErrorDialogComponent implements OnInit {
 
   title = 'Angular-Interceptor';
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  // constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: string) {}
+
 
   ngOnInit() {
   }

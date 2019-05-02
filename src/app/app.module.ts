@@ -1,7 +1,7 @@
 import '../polyfills';
 
 import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
@@ -47,7 +47,7 @@ import { ProjectsModule } from './components/projects/projects.module';
     // the page.
     BrowserModule.withServerTransition({ appId: 'Boutbitnz Inc' }),
     // BrowserModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     // CoreModule,
     FormsModule,
     HttpClientModule,
