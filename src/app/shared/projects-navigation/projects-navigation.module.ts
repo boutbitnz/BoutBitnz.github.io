@@ -5,7 +5,8 @@ import { MaterialModule } from 'src/app/material.module';
 
 import { ProjectsNavigationComponent } from './projects-navigation.component';
 import { ReactiveFormComponent } from 'src/app/components/reactive-form/reactive-form.component';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { NameEditorComponent } from '';
 // import { ProfileEditorComponent } from '';
@@ -13,6 +14,9 @@ import { ReactiveFormComponent } from 'src/app/components/reactive-form/reactive
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
