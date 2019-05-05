@@ -50,7 +50,7 @@ self.addEventListener('activate', function(event) {
 
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
-            return Promise.all(cacheNames.map(function(key) {
+            Promise.all(cacheNames.map(function(key) {
                 if( key !== cacheName) {
                     console.log('Service Worker: Removing Old Cache', key);
                     return caches.delete(key);
