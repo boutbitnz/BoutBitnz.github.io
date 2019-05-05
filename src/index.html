@@ -1,27 +1,173 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <title>Boutbitnz</title>
+  <title>Boutbitnz Inc</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
   <base href="/">
 
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type="text/scss" href="assets/custom-styles/normalize.scss">
+  <link rel="stylesheet" type="text/scss" href="assets/custom-styles/customs.scss">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/x-icon"
+  href="favicon.ico"/>
+
+  <!-- Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> -->
+  <!-- Google Fonts End -->
+
 </head>
 <body>
-  <boutbitnz></boutbitnz>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <boutbitnz>
+    <!-- <div class="wrapper text-center bg-primary p-2" style="height: 100vh;">
+      <div class="container align-middle p-5">
 
-  <div class="loader">
+        <div class="row">
+          <div class="one-half column" style="margin-top: 15%"></div>
+        </div>
+      </div>
+    </div> -->
+  </boutbitnz>
+
+  <!-- <div class="menu">
+    <div class="menu__header"></div>
+    <ul class="menu__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="latest.html">Latest</a></li>
+  </div>
+
+  <div class="menu__overlay"></div>
+
+  <div class="app__content">
+
+    <section class="section">
+      <h3> Stay Up to Date with R-I-L </h3>
+      <img class="profile-pic" src="./images/books.png" alt="Hello, World!">
+
+      <p class="home-note">Latest Commits on Resources I like!</a></p>
+    </section>
+
+
+    <div class="fab fab__push">
+      <div class="fab__ripple"></div>
+      <img class="fab__image" src="./images/push-off.png" alt="Push Notification" />
+    </div> -->
+
+    <!-- Toast msg's  -->
+    <!-- <div class="toast__container"></div>
+  </div> -->
+
+  <!-- Disable loader til timeto fix bug -->
+  <!-- <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
       <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
     </svg>
-  </div>
+  </div> -->
 
+  <!-- Loading Spinner | https://auth0.com/blog/introduction-to-progressive-apps-part-one/
+  <div class="one-half column" style="margin-top: 15%">
+  <i class="fa fa-spinner fa-spin fa-3x"></i>
+  <br>Loading ...
+  </div> -->
 
-<!-- <script type="text/scss" src="./js/app.js"></script>
-<script type="text/scss" src="./js/toast.js"></script>
-<script type="text/scss" src="./js/offline.js"></script>
-<script type="text/scss" src="./js/menu.js"></script> -->
+  <!-- https://trackjs.com/for/angular/?&&&utm_keyword=%2Bangular%20%2Berror&gclid=Cj0KCQjws5HlBRDIARIsAOomqA1QWEUGAMqimJfNQp30jce8vo1B8nIIYJ5FmDP_isfxxp1NHX5yl8waAvAPEALw_wcB -->
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>window.TrackJS && TrackJS.install({token: "YOUR_TOKEN"});</script>
+
+  <!-- All scripts added to angular.js file -->
+  <!-- <script type="text/scss" src="./js/app.js"></script>
+  <script type="text/scss" src="./js/toast.js"></script>
+  <script type="text/scss" src="./js/offline.js"></script>
+  <script type="text/scss" src="./js/menu.js"></script> -->
+
+  <!-- <div style="display:none;">
+    <div class ="mainPg"  id="mainPg" style="display: none">
+
+    <header>
+      <nav>
+        <ul class="btns"><li id="btnA">About Me</li><li id="btnB">Project</li><li id="btnC">Contacts</li></ul>
+      </nav>
+    </header>
+    <div>
+      <a href="#"><img src="src/imgs/bitnz/bitnz.png" alt= "Image of 3 figures"/></a>
+      </div><h1>ELIZABETH BELL</h1>
+      <h2>BoutBitnz</h2>
+    </div>
+
+    <div class="infoMainPg" id="infoMainPg" style="display: none">
+      <div class="backgroundImg" id="backgroundImg"></div>
+      <div class="container">
+
+        <section class="info">
+          <div class="infoTitle">
+            <div id="aboutMe"><h1>About Me</h1><h3>(Click title to return home)</h3></div>
+            <div id="projects"><h1>Projects</h1><h3>(Click title to return home)</h3></div>
+            <div id="contacts"><h1>Contact Me</h1><<h3>(Click title to return home)</h3></div>
+          </div>
+
+          <div class="displayImg">
+            <div class="aboutMeImg"><img src="src/imgs/bitnz/JustMe.png"></div>
+            <div class="projectsImg"><img src="src/imgs/bitnz/JustMe.png"></div>
+            <div class="contactsImg"><img src="src/imgs/bitnz/JustMe.png"></div>
+          </div>
+
+          <div class="collage">
+            <ul class="aboutMeInfoLinks"><li>Biography</li><li>Article</li><li>Interest</li></ul>
+            <ul class="projectsInfoLinks"><li>Simple Gradening</li><li>AR Drones</li><li>Sector67</li><li>YWCA</li></ul>
+            <h1 class="contactsInfoLinks">Elizabeth Bell | ebell@flexion.us | GitHub: boutbitnz@github.io | (608) 216-4800 | 514 North 8th street Madison WI</h1>
+          </div>
+        </section>
+
+        <div class="slideShow" id="slideShow" style="display: none">
+          <img src ="src/imgs/bitnz/YWCAFundraiserFlexTeam.png" name ="slideshow"/>
+          <img src ="src/imgs/bitnz/Fundraiser.png" name ="slideshow"/>
+          <img src ="src/imgs/bitnz/YWebCAPortImgCollage.png" name ="slideshow"/>
+          <img src ="src/imgs/bitnz/YWebCAPortImgCollage.png" name ="slideshow"/>
+          <img src ="src/imgs/bitnz/YWebCAPortImgCollage.png" name ="slideshow"/>
+          <img src ="src/imgs/bitnz/" name ="slideshow"/>
+          <table class="tableData">
+            <tr>
+              <td class="control" align = "left">Previous</td>
+              <td class="control" align = "right">Next</td>
+              <td class="auto">Auto</td>
+              <td class="home">Home</td>
+
+            </tr>
+          </table>
+          <div id="description"></div>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>

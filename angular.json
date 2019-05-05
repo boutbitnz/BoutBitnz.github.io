@@ -27,9 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/css/styles.css",
+              "src/assets/custom-styles/customs.scss",
+              "src/assets/custom-styles/normalize.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/js/app.js",
+              "src/js/latest.js",
+              "src/js/menu.js",
+              "src/js/offline.js",
+              "src/js/toast.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -84,9 +93,18 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/css/styles.css",
+              "src/assets/custom-styles/customs.scss",
+              "src/assets/custom-styles/normalize.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/js/app.js",
+              "src/js/latest.js",
+              "src/js/menu.js",
+              "src/js/offline.js",
+              "src/js/toast.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -110,7 +128,16 @@
           "options": {
             "outputPath": "dist/boutbitnz/server",
             "main": "src/main.server.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "tsConfig": "src/tsconfig.server.json",
+            "fileReplacements": [
+              {
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "sourceMap": false
+
           }
         },
         "app-shell": {

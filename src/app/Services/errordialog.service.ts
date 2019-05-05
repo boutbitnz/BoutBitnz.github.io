@@ -1,6 +1,8 @@
+// handle the error responce
+
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ErrorDialogComponent } from '../tools/errordialog.component';
+import { ErrorDialogComponent } from '../components/error-dialog/errordialog.component';
 
 @Injectable()
 export class ErrorDialogService {
@@ -14,7 +16,7 @@ export class ErrorDialogService {
 
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed');
-            let animal;
+            let animal: any;
             animal = result;
         });
     }
