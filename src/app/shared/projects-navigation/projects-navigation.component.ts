@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-// import { fade } from 'src/app/animations';
+import { fade } from 'src/app/animations';
 
 
 const projectsNavTemplate = `
     <nav id="projNav">
-      <a href="#" (click)="toggleEditor('rform')"><small><h2>Reactive Forms</h2></small></a>
-      <a href="#" (click)="toggleEditor('name')"><small><h2>Name Editor</h2></small></a>
+      <a href="#" (click)="toggleEditor('rform')" (click)="toggleFade()"><small><h2 [@fade]="fade" fast>Reactive Forms</h2></small></a>
+      <a href="#" (click)="toggleEditor('name')" (click)="toggleFade()"><small><h2 [@fade]="fade" fast>Name Editor</h2></small></a>
     </nav>
 
     <div layout="column" layout-align-xs="space-between none">
       <rform *ngIf="showrForm"></rform>
     </div>
-
     `;
+
     // <name-editor *ngIf="showNameEditor"></name-editor>
     // <profile-editor *ngIf="showProfileEditor"></profile-editor>
 const projectsNavStyles = ` h3 {font-family: fantasy;} `;
-
-// animations: [ fade ]
 
 export type EditorType = 'name' | 'profile' | 'rform';
 
@@ -27,10 +25,21 @@ export type EditorType = 'name' | 'profile' | 'rform';
   selector: 'pnav',
   template: projectsNavTemplate,
   styles: [ projectsNavStyles ],
+  animations: [ fade ],
   // styleUrls: ['./projects-navigation.component.scss']
 })
 export class ProjectsNavigationComponent implements OnInit {
 
+  title = 'Projects Navigation';
+
+  editor: EditorType = 'name';
+
+  fade = 'fadeIn';
+
+  // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
+  toggleFade() {
+    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
+  }
 
   get showrForm() {
     return this.editor === 'rform';
@@ -46,18 +55,9 @@ export class ProjectsNavigationComponent implements OnInit {
 
   constructor() { }
 
-  title = 'Projects Navigation';
-
-  editor: EditorType = 'name';
-
-  // fade = 'fadeIn';
-
   toggleEditor(type: EditorType) {
     this.editor = type;
   }
-  // toggleFade() {
-  //   this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
-  // }
 
   ngOnInit() {
   }
