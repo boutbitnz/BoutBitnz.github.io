@@ -13,7 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
     // The AppServerModule should import your AppModule followed
     // by the ServerModule from @angular/platform-server.
     AppModule,
-    ModuleMapLoaderModule,
+    ModuleMapLoaderModule, // <-- *Important* to have lazy-loaded routes work
     // RouterModule.forRoot(routes), // <-- *Important* to have lazy-loaded routes work
     ServerModule
   ],
