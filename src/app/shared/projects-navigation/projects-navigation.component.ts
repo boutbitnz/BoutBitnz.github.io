@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fade } from 'src/app/animations';
 
+export type EditorType = 'name' | 'profile' | 'rform';
 
 const projectsNavTemplate = `
     <nav id="projNav">
@@ -16,9 +17,6 @@ const projectsNavTemplate = `
     // <name-editor *ngIf="showNameEditor"></name-editor>
     // <profile-editor *ngIf="showProfileEditor"></profile-editor>
 const projectsNavStyles = ` h3 {font-family: fantasy;} `;
-
-export type EditorType = 'name' | 'profile' | 'rform';
-
 
 @Component({
   // tslint:disable-next-line:component-selector

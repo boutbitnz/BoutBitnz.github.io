@@ -1,25 +1,54 @@
+// import {
+//   trigger, transition, state, style, animate
+// } from '@angular/animations';
+
+// import { animation, useAnimation } from '@angular/animations';
+
+// export enum States {
+//   FadeIn = 'fadeIn',
+//   FadeOut = 'fadeOut',
+//   Void = 'void',
+// }
+
+// const hasAttribute = (attribute: string) => (
+//     fromState: string,
+//     toState: string,
+//     element: any,
+//     params: {[key: string]: any}
+//   ): boolean => element.hasAttribute(attribute) || (params &&  params.type === attribute);
+
+// export const fade = AnimationTriggerMetadata();
+
+
+// function AnimationTriggerMetadata() {
+//   return trigger('fade', [
+//     state(States.FadeIn, style({ opacity: 1 })),
+//     state(States.FadeOut, style({ opacity: 0.3 })),
+//     transition(hasAttribute('fast'), animate('1000ms linear')),
+//     transition(`${States.FadeIn} <=> ${States.FadeOut}`, animate('4000ms linear')),
+//   ]);
+// }
 import {
   trigger, transition, state, style, animate
 } from '@angular/animations';
-
 import { animation, useAnimation } from '@angular/animations';
 
 export enum States {
-  FadeIn = 'fadeIn',
-  FadeOut = 'fadeOut',
-  Void = 'void',
+  FadeIn = "fadeIn",
+  FadeOut = "fadeOut",
+  Void = "void",
 }
 
 const hasAttribute = (attribute: string) => (
     fromState: string,
     toState: string,
     element: any,
-    params: {[key: string]: any}
-  ): boolean => element.hasAttribute(attribute) || (params &&  params.type === attribute);
+    params: {[key:string]: any}
+  ): boolean => element.hasAttribute(attribute) || (params &&  params.type==attribute);
 
 export const fade = trigger('fade', [
   state(States.FadeIn, style({ opacity: 1 })),
-  state(States.FadeOut, style({ opacity: 0.1 })),
+  state(States.FadeOut, style({ opacity: 0.4 })),
   transition(hasAttribute('fast'), animate('1000ms linear')),
   transition(`${States.FadeIn} <=> ${States.FadeOut}`, animate('4000ms linear')),
 ]);

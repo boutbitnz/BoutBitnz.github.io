@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { fade } from 'src/app/animations';
+
 // import { AboutComponent } from './../../components/about/about.component';
 // import { HomePgComponent } from './../../components/home-pg/home-pg.component';
 // import { ContactInfoComponent } from './../../components/contact-info/contact-info.component';
@@ -10,10 +12,10 @@ export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'mnav
 
 const mainNavTemplate = `
     <nav id="mainNav">
-      <a href="#" class="navText" (click)="toggleEditor('home')">Home</a>
-      <a href="#" class="navText" (click)="toggleEditor('about')">About</a>
-      <a href="#" class="navText" (click)="toggleEditor('contacts')">Contacts</a>
-      <a href="#" class="navText" (click)="toggleEditor('pnav')">Projects</a>
+      <a href="#" class="navText" (click)="toggleEditor('home')" (click)="toggleFade()"><span [@fade]="fade" fast>Home</span></a>
+      <a href="#" class="navText" (click)="toggleEditor('about')" (click)="toggleFade()"><span [@fade]="fade" fast>About</span></a>
+      <a href="#" class="navText" (click)="toggleEditor('contacts')" (click)="toggleFade()"><span [@fade]="fade" fast>Contacts</span></a>
+      <a href="#" class="navText" (click)="toggleEditor('pnav')" (click)="toggleFade()"><span [@fade]="fade" fast>Projects</span></a>
     </nav>
 
     <about *ngIf="showAbout"></about>
@@ -44,6 +46,7 @@ const mainNavStyles = `
   // templateUrl: './main-navigation.component.html'
   template: mainNavTemplate,
   styles: [ mainNavStyles ],
+  animations: [ fade ],
 
 })
 export class MainNavigationComponent implements OnInit {
@@ -51,6 +54,13 @@ export class MainNavigationComponent implements OnInit {
   title = 'Main Navigation';
 
   editor: EditorType = 'home';
+
+  fade = 'fadeIn';
+
+  // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
+  toggleFade() {
+    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
+  }
 
   get showAbout() {
     return this.editor === 'about';
