@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 
+import { AppRoutingModule } from './../../app-routing.module';
+
 import { ProjectsNavigationComponent } from './projects-navigation.component';
 import { ReactiveFormComponent } from 'src/app/components/reactive-form/reactive-form.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { NameEditorComponent } from '';
 // import { ProfileEditorComponent } from '';
@@ -15,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     BrowserModule,
+    AppRoutingModule,
     // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
     BrowserAnimationsModule,
     FormsModule,
@@ -24,4 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [ProjectsNavigationComponent, ReactiveFormComponent],
   exports: [ProjectsNavigationComponent]
 })
-export class ProjectsNavigationModule { }
+export class ProjectsNavigationModule implements OnInit {
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+}

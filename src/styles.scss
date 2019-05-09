@@ -15,6 +15,15 @@
   font-family: "Zapfino", Georgia, Serif;
 }
 
+
+/* RESET styles */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 /* Master Styles */
 // h1 {
 //   color: #369;
@@ -27,65 +36,20 @@
 //   font-weight: lighter;
 // }
 
-h1 {color: #fff;}
-h2 {font-size: 1em; color: #fff; text-shadow: 16px 5px 20px #000000;}
-h3 {font-size: medium; color: #fff;}
+h1 {padding: 0.5em; color: #fff;}
+h2 {font-size: 1em; padding: 0.5em; color: #fff; text-shadow: 16px 5px 20px #000000;}
+h2#customerDetail {display: flex;}
+h3 {padding: 0.5em; font-size: medium; color: #fff;}
 
 .pageTitle h2 {
   font-size: larger;
-  margin-top: -2em;
+  margin: -4em 0 0 .5em;
   color: hsl(0, 100%, 80%);
   text-shadow: 16px 5px 20px #000000;
 }
 
 // h1 {width: auto; height: auto;}
 
-:root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-
-// h2 {
-//   color: #e85d68;
-// }
-
-body {
-  margin: 2em;
-}
 body,
 input[text],
 button {
@@ -97,6 +61,8 @@ button {
 body {
   // border: 1px solid rgba(255, 0, 0, .5);
   transition: all 0.5s ease-in-out;
+  scroll-behavior: smooth;
+
   background: #484848;
   @media screen and (min-width: 64em) {
     background: #484848;
@@ -108,6 +74,9 @@ body {
 
   overflow-x: hidden;
   overflow-y: hidden;
+
+  margin: 2em;
+
 }
 
 a {
@@ -149,7 +118,7 @@ nav#mainNav {
 nav#projNav {
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
-  height: 20vh;
+  // height: 20vh;
 }
 
 nav a {
@@ -197,6 +166,7 @@ h2 a.active {
   color: #e85d68;
 }
 
+#customerDetail { }
 
 
 // nav h1 {
@@ -269,14 +239,15 @@ label[_ngcontent-c7] {
 }
 
 input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
   height: 2em;
   font-size: 1em;
   padding-left: .4em;
 }
 
 small {
-  font-size: 80%;
-  margin-right: 1em;
+  // font-size: 80%;
+  // margin-right: 1em;
 }
 
 /*us control over where colors start and stop on a gradient/hard stop between two colors*/
@@ -441,6 +412,37 @@ button:disabled {
 //   height: 80vh;
 //   margin-top: -3em;
 // }
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 
 /*
 Copyright 2017-2018 Google Inc. All Rights Reserved.

@@ -1,32 +1,32 @@
-// The code above is responsible for app-like toast notification pop-up timed widget.
-(function (exports) {
-  'use strict';
+// // The code above is responsible for app-like toast notification pop-up timed widget.
+// (function (exports) {
+//   'use strict';
 
-  var toastContainer = document.querySelector('.toast__container');
+//   var toastContainer = document.querySelector('.toast__container');
 
-  //To show notification
-  function toast(msg, options) {
-    if (!msg) return;
+//   //To show notification
+//   function toast(msg, options) {
+//     if (!msg) return;
 
-    options = options || 3000;
+//     options = options || 3000;
 
-    var toastMsg = document.createElement('div');
+//     var toastMsg = document.createElement('div');
 
-    toastMsg.className = 'toast__msg';
-    toastMsg.textContent = msg;
+//     toastMsg.className = 'toast__msg';
+//     toastMsg.textContent = msg;
 
-    toastContainer.appendChild(toastMsg);
+//     toastContainer.appendChild(toastMsg);
 
-    //Show toast for 3secs and hide it
-    setTimeout(function () {
-      toastMsg.classList.add('toast__msg--hide');
-    }, options);
+//     //Show toast for 3secs and hide it
+//     setTimeout(function () {
+//       toastMsg.classList.add('toast__msg--hide');
+//     }, options);
 
-    //Remove the element after hiding
-    toastMsg.addEventListener('transitionend', function (event) {
-      event.target.parentNode.removeChild(event.target);
-    });
-  }
+//     //Remove the element after hiding
+//     toastMsg.addEventListener('transitionend', function (event) {
+//       event.target.parentNode.removeChild(event.target);
+//     });
+//   }
 
-  exports.toast = toast; //Make this method available in global
-})(typeof window === 'undefined' ? module.exports : window);
+//   exports.toast = toast; //Make this method available in global
+// })(typeof window === 'undefined' ? module.exports : window);

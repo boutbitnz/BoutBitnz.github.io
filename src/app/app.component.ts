@@ -8,8 +8,8 @@ const wrapper =
       <div class="row">
 
       <mnav></mnav>
-      <h2><small style="float: left;" (click)="getCustomerDetails()">Get customer details</small></h2>
-      <footer></footer>
+      <h2 id="customerDetail"><small (click)="getCustomerDetails()">Get customer details</small></h2>
+      <app-footer></app-footer>
 
       </div>
     </div>
@@ -17,6 +17,9 @@ const wrapper =
   </div>
   `;
 
+const wrapperStyles = `
+    h2#customerDetail { margin-top: 55em;}
+    `;
 @Component({
 
   // tslint:disable-next-line:component-selector
@@ -25,7 +28,9 @@ const wrapper =
   // templateUrl: './app.component.html',
   template:
   wrapper,
-  // styleUrls: ['./app.component.scss']
+  styles: [
+    wrapperStyles
+  ]
 
 })
 export class AppComponent implements OnInit {
