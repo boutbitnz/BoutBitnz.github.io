@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 // import { ProjectsComponent } from './../../components/projects/projects.component';
 // import { AppRoutingModule } from './../../app-routing.module';
 
-// export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'projects';
+// export type EditorType = 'about' |'contact' |'header' | 'home' | 'name' | 'projects';
 
 const headerTemplate = `
     <div class="row">
@@ -54,14 +54,14 @@ export class HeaderComponent implements OnInit {
 //   <a (click)="toggleEditor('header')">Header</a>
 //   <a href="#" class="navText" (click)="toggleEditor('home')">Home</a>
 //   <a href="#" class="navText" (click)="toggleEditor('about')">About</a>
-//   <a href="#" class="navText" (click)="toggleEditor('contacts')">Contacts</a>
+//   <a href="#" class="navText" (click)="toggleEditor('contact')">Contact</a>
 //   <a href="#" class="navText" (click)="toggleEditor('projects')">Projects</a>
 //   <a (click)="toggleEditor('name')">Name Editor</a>
 //   <a (click)="toggleEditor('profile')">Profile Editor</a>
 // </nav>
 
 // <about *ngIf="showAbout"></about>
-// <contacts *ngIf="showContacts"></contacts>
+// <contact *ngIf="showContact"></contact>
 // <header *ngIf="showHeader"></header>
 // <home *ngIf="showHome"></home>
 // <name-editor *ngIf="showNameEditor"></name-editor>

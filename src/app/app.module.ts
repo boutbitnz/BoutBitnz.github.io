@@ -10,8 +10,8 @@ import { MatDialogModule } from '@angular/material';
 import { NgModule, Inject, PLATFORM_ID, APP_ID, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MaterialModule } from './material.module';
 
-// import { CoreModule } from './core.module';
 // Services
+// import { CoreModule } from './core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorDialogService } from './Services/errordialog.service';
 import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
@@ -29,7 +29,6 @@ import { ErrorDialogComponent } from './components/error-dialog/errordialog.comp
 // import { FooterComponent } from './shared/footer/footer.component';
 import { MainNavigationModule } from './shared/main-navigation/main-navigation.module';
 import { ProjectsNavigationModule } from './shared/projects-navigation/projects-navigation.module';
-import { ProjectsModule } from './components/projects/projects.module';
 
 
 @NgModule({
@@ -61,7 +60,6 @@ import { ProjectsModule } from './components/projects/projects.module';
     MainNavigationModule,
     MatDialogModule,
     ProjectsNavigationModule,
-    ProjectsModule
   ],
 
   // This is about how to handle the http request and responce using Angular 6&7 interceptor
