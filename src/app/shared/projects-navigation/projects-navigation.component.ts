@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fade } from 'src/app/animations';
+import { fade } from '../../animations';
 
 export type EditorType = 'name' | 'profile' | 'rform';
 

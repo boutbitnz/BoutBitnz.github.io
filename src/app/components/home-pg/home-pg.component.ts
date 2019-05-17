@@ -9,7 +9,6 @@ const heroTemplate = `
 `;
 const heroStyles = `
     .heroImg {
-      float: left;
       height: 80vh;
       padding: .5em;
       margin-left: -5em;

@@ -23,14 +23,29 @@ const errorDialog =
   // tslint:disable-next-line:component-selector
   selector: 'boutbitnz',
   template: errorDialog,
+  // `
+  // <div>
+  //   <div>
+  //       <p>
+  //           Reason: {{data.reason}}
+  //       </p>
+  //       <p>
+  //           Status: {{data.status}}
+  //       </p>
+  //   </div>
+  // </div>
+  // `,
 
 })
 export class ErrorDialogComponent implements OnInit {
 
   title = 'Angular-Interceptor';
+  // data: any;
+
+
 
   // constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
-  constructor(@Inject(MAT_DIALOG_DATA) public data: string) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
 
   ngOnInit() {

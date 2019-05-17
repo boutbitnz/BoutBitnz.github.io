@@ -18,7 +18,7 @@ const wrapper =
   `;
 
 const wrapperStyles = `
-    h2#customerDetail { margin-top: 55em;}
+    h2#customerDetail {position: absolute; bottom: 5em;}
     `;
 @Component({
 
