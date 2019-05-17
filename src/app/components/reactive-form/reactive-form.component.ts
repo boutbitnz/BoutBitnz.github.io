@@ -5,11 +5,19 @@ import { FormArray } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
 
+const rformStyles = `
+  :host {
+    margin: 0.5em 0;
+    color: hsla(196, 43%, 45%, 1);
+    font-weight: bold;
+    font-family: fantasy;
+  }
+  `;
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'rform',
   templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.scss']
+  styles: [rformStyles]
 })
 export class ReactiveFormComponent implements OnInit {
 

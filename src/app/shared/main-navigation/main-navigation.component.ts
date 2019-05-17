@@ -8,18 +8,18 @@ import { fade } from 'src/app/animations';
 // import { ProjectsComponent } from './../../components/projects/projects.component';
 // import { AppRoutingModule } from './../../app-routing.module';
 
-export type EditorType = 'about' |'contacts' |'header' | 'home' | 'name' | 'mnav' | 'pnav' | 'projects';
+export type EditorType = 'about' |'contact' |'header' | 'home' | 'name' | 'mnav' | 'pnav' | 'projects';
 
 const mainNavTemplate = `
     <nav id="mainNav">
       <a href="#" class="navText" (click)="toggleEditor('home')" (click)="toggleFade()"><span [@fade]="fade" fast>Home</span></a>
       <a href="#" class="navText" (click)="toggleEditor('about')" (click)="toggleFade()"><span [@fade]="fade" fast>About</span></a>
-      <a href="#" class="navText" (click)="toggleEditor('contacts')" (click)="toggleFade()"><span [@fade]="fade" fast>Contacts</span></a>
+      <a href="#" class="navText" (click)="toggleEditor('contact')" (click)="toggleFade()"><span [@fade]="fade" fast>Contact</span></a>
       <a href="#" class="navText" (click)="toggleEditor('pnav')" (click)="toggleFade()"><span [@fade]="fade" fast>Projects</span></a>
     </nav>
 
     <about *ngIf="showAbout"></about>
-    <contacts *ngIf="showContacts"></contacts>
+    <contact *ngIf="showContact"></contact>
     <home *ngIf="showHome"></home>
     <pnav *ngIf="showPNav"></pnav>
     `;
@@ -58,21 +58,14 @@ export class MainNavigationComponent implements OnInit {
   fade = 'fadeIn';
 
   // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
-  toggleFade() {
-    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
-  }
 
   get showAbout() {
     return this.editor === 'about';
   }
 
-  get showContacts() {
-    return this.editor === 'contacts';
+  get showContact() {
+    return this.editor === 'contact';
   }
-
-  // get showHeader() {
-  //   return this.editor === 'header';
-  // }
 
   get showHome() {
     return this.editor === 'home';
@@ -84,21 +77,15 @@ export class MainNavigationComponent implements OnInit {
     return this.editor === 'pnav';
   }
 
-  // get showProjects() {
-  //   return this.editor === 'projects';
-  // }
 
-  // get showNameEditor() {
-  //   return this.editor === 'name';
-  // }
-
-  // get showProfileEditor() {
-  //   return this.editor === 'profile';
-  // }
+  toggleFade() {
+    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
+  }
 
   toggleEditor(type: EditorType) {
     this.editor = type;
   }
+
   // constructor() { }
 
   ngOnInit() {
@@ -110,14 +97,14 @@ export class MainNavigationComponent implements OnInit {
 //   <a (click)="toggleEditor('header')">Header</a>
 //   <a href="#" class="navText" (click)="toggleEditor('home')">Home</a>
 //   <a href="#" class="navText" (click)="toggleEditor('about')">About</a>
-//   <a href="#" class="navText" (click)="toggleEditor('contacts')">Contacts</a>
+//   <a href="#" class="navText" (click)="toggleEditor('contact')">Contact</a>
 //   <a href="#" class="navText" (click)="toggleEditor('projects')">Projects</a>
 //   <a (click)="toggleEditor('name')">Name Editor</a>
 //   <a (click)="toggleEditor('profile')">Profile Editor</a>
 // </nav>
 
 // <about *ngIf="showAbout"></about>
-// <contacts *ngIf="showContacts"></contacts>
+// <contact *ngIf="showContact"></contact>
 // <header *ngIf="showHeader"></header>
 // <home *ngIf="showHome"></home>
 // <name-editor *ngIf="showNameEditor"></name-editor>

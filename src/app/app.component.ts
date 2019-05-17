@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './Services/login.service';
+// import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+
 
 const wrapper =
 `
@@ -18,24 +20,52 @@ const wrapper =
   `;
 
 const wrapperStyles = `
-    h2#customerDetail { margin-top: 55em;}
+    h2#customerDetail {position: absolute; bottom: 5em;}
     `;
-@Component({
 
+// const animationMenu = trigger('listAnimation', [
+//   transition('* => *', [
+//     query(':leave', [
+//       stagger(100, [
+//         animate('0.5s', style({ opacity: 0 }))
+//       ])
+//     ], { optional: true }),
+//     query(':enter', [
+//       style({ opacity: 0 }),
+//       stagger(100, [
+//         animate('0.5s', style({ opacity: 1 }))
+//       ])
+//     ], { optional: true })
+//   ])
+// ]);
+
+// <div style="position: absolute; top: 5em; right: 15em;">
+//   <button (click)="toggle()">Show / Hide Items</button>
+//   <div [@listAnimation]="items.length"
+//       (w.start)="logAnimation($event)"
+//       (@listAnimation.done)="logAnimation($event)">
+//     <div *ngFor="let item of items">
+//       <div>{{ item }}</div>
+//     </div>
+//   </div>
+// </div>
+
+@Component({
   // tslint:disable-next-line:component-selector
   selector: 'boutbitnz',
-  // templateUrl: './app.component.html',
-  // templateUrl: './app.component.html',
-  template:
-  wrapper,
-  styles: [
-    wrapperStyles
-  ]
+  template: wrapper,
+  styles: [ wrapperStyles],
 
+  // List Animation | https://stackblitz.com/edit/angular-list-animations?file=app%2Fapp.component.ts
+  // animations: [ animationMenu ],
+  // templateUrl: './app.component.html',
+  // templateUrl: './app.component.html',
 })
+
 export class AppComponent implements OnInit {
 
   title = 'Boutbitnz Inc';
+  // items = [];
 
   // Angular-Interceptor | https://github.com/vigneshsithirai/Angular-Interceptor/blob/master/src/app/app.component.ts
   constructor(public loginService: LoginService) {
@@ -49,6 +79,26 @@ export class AppComponent implements OnInit {
       console.log('----->>>', data);
     });
   }
+
+  // List Animation | https://stackblitz.com/edit/angular-list-animations?file=app%2Fapp.component.ts
+  // items = [];
+
+  // logAnimation(_event) {
+  //   console.log(_event);
+  // }
+  // showItems() {
+  //   [0, 1, 2, 3, 4, 6, 7, 8, 9, 10].map((i) => {
+  //     this.items.push('User Number - ' + i);
+  //   });
+  // }
+
+  // hideItems() {
+  //   this.items = [];
+  // }
+
+  // toggle() {
+  //   this.items.length ? this.hideItems() : this.showItems();
+  // }
 
   // constructor(private router: Router, ) {
   //   this.router.events.subscribe((event: Event) => {
@@ -70,14 +120,3 @@ export class AppComponent implements OnInit {
   }
 
 }
-
-// angular-multi-view
-// <div class="container-fluid">
-//   <header></header>
-
-//    <main id="main-content">
-//      <div class="container main-content">
-//        <router-outlet></router-outlet>
-//      </div>
-//    </main>
-// </div>
