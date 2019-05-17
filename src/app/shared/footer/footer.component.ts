@@ -6,7 +6,7 @@ const footerStyles = `
   footer { position: absolute; text-align: -webkit-center;
   cursor: pointer; bottom: 3em; }
   footer small:hover { color: #fff; }
-  hr { width: 100vw; }
+  hr { width: 99vw; }
 
   footer small {
     color: hsl(0, 100%, 80%);

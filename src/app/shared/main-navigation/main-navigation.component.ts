@@ -58,9 +58,6 @@ export class MainNavigationComponent implements OnInit {
   fade = 'fadeIn';
 
   // https://stackblitz.com/edit/angular-v6-animations?file=app%2Fanimations.ts
-  toggleFade() {
-    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
-  }
 
   get showAbout() {
     return this.editor === 'about';
@@ -88,13 +85,9 @@ export class MainNavigationComponent implements OnInit {
   //   return this.editor === 'projects';
   // }
 
-  // get showNameEditor() {
-  //   return this.editor === 'name';
-  // }
-
-  // get showProfileEditor() {
-  //   return this.editor === 'profile';
-  // }
+  toggleFade() {
+    this.fade = this.fade === 'fadeIn' ? 'fadeOut' : 'fadeIn';
+  }
 
   toggleEditor(type: EditorType) {
     this.editor = type;

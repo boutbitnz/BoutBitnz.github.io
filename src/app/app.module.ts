@@ -17,6 +17,8 @@ import { ErrorDialogService } from './Services/errordialog.service';
 import { HttpConfigInterceptor } from './Services/httpconfig.interceptor';
 import { LoginService } from './Services/login.service';
 import {Routes, RouterModule} from '@angular/router';
+// Apollo
+import { GraphQLModule } from './graphql.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -50,6 +52,7 @@ import { ProjectsModule } from './components/projects/projects.module';
     BrowserAnimationsModule,
     // CoreModule,
     FormsModule,
+    GraphQLModule,
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
