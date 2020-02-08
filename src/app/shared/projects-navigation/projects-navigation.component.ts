@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fade } from '../../animations';
+import { fade } from './../../animations';
 
 export type EditorType = 'menu' | 'profile' | 'pnav' |'rform';
 
